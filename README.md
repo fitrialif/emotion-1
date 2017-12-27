@@ -1,9 +1,9 @@
 ## emotion recognition
-for a given image of a face, predict emotion. 
+predict emotion from video.
 ## usage
 ```
 git clone https://github.com/mynameisvinn/emotion
-python emotion.py  # webcam
+python emotion.py  # make sure your webcam is turned on
 ```
 ## model
 ### architecture
@@ -27,8 +27,7 @@ model.add(MaxPooling2D(pool_size=(2, 2)))
 
 model.add(Dense(64, activation='relu'))
 model.add(Dense(64, activation='relu'))
-model.add(Dense(2, activation='softmax'))
+model.add(Dense(7, activation='softmax'))  # 7 classes
 ```
 ### dataset
-the dataset consists of 28,709 examples of 48x48 pixel grayscale images of faces, categorized as one of the following: angry, disgust, fear, happy, sad, surprise, neutral.
-
+the dataset consists of 28,709 examples of 48x48 pixel grayscale images of faces, categorized as one of the following: angry, disgust, fear, happy, sad, surprise, neutral. for more information, visit [fer](https://github.com/Microsoft/FERPlus).
